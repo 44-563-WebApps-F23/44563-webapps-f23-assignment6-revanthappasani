@@ -8,14 +8,14 @@
 <h2>Appasani goes on a cruise</h2>
 <form>
 
- <label for="cabin">Shares Cabin</label>
- <input type ="checkbox" id="cabin" value="True" min=10 max=50 step=2> 
+ <label for="scabin">Shares Cabin</label>
+ <input type ="checkbox" id="scabin" value="True" min=10 max=50 step=2> 
  <br>
- <label for="eating">Breakfast</label>
- <input type ="checkbox" id="eating" value="True" autofocus> 
+ <label for="eating food">Breakfast</label>
+ <input type ="checkbox" id="eatingfood" value="True" autofocus> 
  <br>
- <label for="pass">Pool Pass</label>
- <input type ="checkbox" id="pass" value="False" min=10 max=50 step=2> 
+ <label for="ppass">Pool Pass</label>
+ <input type ="checkbox" id="ppass" value="False" min=10 max=50 step=2> 
  <br>
  <br>
  <input type="button" onclick="selectCruise()" value="Select a cruise">
@@ -28,9 +28,9 @@
   var my_cruise= {};
   function selectCruise(){
     my_cruise= {}
-    my_cruise.sharedcabin = document.getElementById("cabin").checked
-    my_cruise.breakfast = document.getElementById("eating").checked
-    my_cruise.poolpass = document.getElementById("pass").checked
+    my_cruise.sharedcabin = document.getElementById("scabin").checked
+    my_cruise.breakfast = document.getElementById("eatingfood").checked
+    my_cruise.poolpass = document.getElementById("ppass").checked
     result = document.getElementById("result")
     result.innerHTML = JSON.stringify(my_cruise)
  }
@@ -43,7 +43,7 @@
     <input type ="text" id="days" value="days" min=10 max=50 step=2> 
     <br>
     <br>
-    <label for="price">Enter price</label>
+    <label for="price">Enter The price</label>
     <input type ="text" id="price" autofocus> 
     <br>
     <br>
