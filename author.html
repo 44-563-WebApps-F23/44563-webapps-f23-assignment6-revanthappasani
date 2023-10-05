@@ -22,18 +22,24 @@
 <script>
     let good = 0;
     let oops = 0;
+    let useImage=1;
     function checkAuthor() {
         const secretAuthor = document.getElementById("secretAuthor").value;
         const guessAuthor = document.getElementById("guessAuthor").value;
-
         if (secretAuthor === guessAuthor) {
             good++;
             alert("You got it right!");
         } else {
             oops++;
-            alert("Sorry.");
-            console.log("Sorry");
-
+            document.getElementById("incorrect-guesses").innerHTML = `<div>Incorrect Guess #${oops}: ${guessAuthor}</div>`;
+            if (oops >= 7) {
+                document.querySelector("button").onclick = function() {
+                    alert("Sorry, ran out of guesses.");
+                };
+                
+            } else {
+                alert("Sorry");
+            }
         }
         const resultElement = document.getElementById("result");
         resultElement.textContent = `Correct guesses: ${good} | Wrong guesses: ${oops}`;
